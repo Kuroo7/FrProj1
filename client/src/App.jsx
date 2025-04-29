@@ -4,7 +4,7 @@ import OrdersPage from "./pages/Admin/OrdersPage";
 import AdminProtectedRoute from "./components/admin/AdminProtectedRoute";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import AdminLayout from "./pages/admin/AdminLayout";
+import AdminLayout from "./pages/Admin/AdminLayout";
 import CreateProductPage from "./pages/Admin/CreateProductPage";
 import EditProductPage from "./pages/Admin/EditProductPage";
 import CreateVouchersPage from "./pages/Admin/CreateVouchersPage";
