@@ -12,7 +12,7 @@ export default function HomePage() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products');
+        const res = await axios.get('https://frproj1.onrender.com/api/products');
         setProducts(res.data);
       } catch (err) {
         console.error('Failed to fetch products', err);

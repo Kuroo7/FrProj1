@@ -14,7 +14,7 @@ export default function OrderConfirmation() {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/orders/${id}`, {
+        const { data } = await axios.get(`https://frproj1.onrender.com/api/orders/${id}`, {
           withCredentials: true,
         });
         setOrder(data);

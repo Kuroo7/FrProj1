@@ -11,7 +11,7 @@ const UpdateUserModal = ({ user, onClose, refreshUsers }) => {
 
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/user/${user._id}`,
+        `https://frproj1.onrender.com/api/admin/user/${user._id}`,
         { name, email, role },
         { withCredentials: true }
       );

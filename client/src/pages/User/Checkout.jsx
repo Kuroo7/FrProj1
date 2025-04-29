@@ -32,7 +32,7 @@ export default function Checkout() {
       setError(null);
       
       const { data } = await axios.post(
-        'http://localhost:5000/api/vouchers/apply',
+        'https://frproj1.onrender.com/api/vouchers/apply',
         {
           code: voucherCode,
           cartProductIds: cart.map(item => item._id),
@@ -84,7 +84,7 @@ export default function Checkout() {
       }));
 
       const { data } = await axios.post(
-        'http://localhost:5000/api/orders',
+        'https://frproj1.onrender.com/api/orders',
         {
           orderedProducts,
           voucherCode: appliedVoucher?.code || null,

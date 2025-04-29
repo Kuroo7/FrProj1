@@ -8,7 +8,7 @@ const VoucherList = ({ partnerId, onBack }) => {
   useEffect(() => {
     const fetchVouchers = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/partner/partners/${partnerId}/vouchers`, { withCredentials: true }  );
+        const { data } = await axios.get(`https://frproj1.onrender.com/api/partner/partners/${partnerId}/vouchers`, { withCredentials: true }  );
         setVouchers(data);
       } catch (error) {
         console.error(error);

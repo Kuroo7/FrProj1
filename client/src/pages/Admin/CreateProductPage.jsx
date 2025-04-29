@@ -38,7 +38,7 @@ function CreateProductPage() {
         options: formData.options ? JSON.parse(formData.options) : [],
       };
 
-      await axios.post("http://localhost:5000/api/products", payload, {
+      await axios.post("https://frproj1.onrender.com/api/products", payload, {
         withCredentials: true,
       });
       navigate("/admin/products");

@@ -9,7 +9,7 @@ const AdminUsersPage = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/admin/users", { withCredentials: true }); // assuming cookie auth
+      const { data } = await axios.get("https://frproj1.onrender.com/api/admin/users", { withCredentials: true }); // assuming cookie auth
       setUsers(data);
     } catch (error) {
       console.error(error.response?.data?.message || error.message);
@@ -24,7 +24,7 @@ const AdminUsersPage = () => {
     if (!window.confirm("Are you sure you want to delete this user?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/admin/user/${id}`, { withCredentials: true });
+      await axios.delete(`https://frproj1.onrender.com/api/admin/user/${id}`, { withCredentials: true });
       fetchUsers();
     } catch (error) {
       console.error(error.response?.data?.message || error.message);

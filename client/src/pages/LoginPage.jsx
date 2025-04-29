@@ -16,7 +16,7 @@ const LoginPage = () => {
     setError("");
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/auth/login", { email, password }, { withCredentials: true });
+      const { data } = await axios.post("https://frproj1.onrender.com/api/auth/login", { email, password }, { withCredentials: true });
   
       if (data.role==="admin") {
         

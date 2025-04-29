@@ -8,7 +8,7 @@ const PartnerList = ({ onPartnerClick }) => {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/admin/partners", { withCredentials: true });
+        const { data } = await axios.get("https://frproj1.onrender.com/api/admin/partners", { withCredentials: true });
         setPartners(data);
       } catch (error) {
         console.error(error);

@@ -15,7 +15,7 @@ const SignupPage = () => {
     setError("");
 
     try {
-      await axios.post("/api/auth/signup", { name, email, password }, { withCredentials: true });
+      await axios.post("https://frproj1.onrender.com/api/auth/register", { name, email, password }, { withCredentials: true });
       navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");

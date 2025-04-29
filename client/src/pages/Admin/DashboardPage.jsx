@@ -8,7 +8,7 @@ function DashboardPage() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/admin/dashboard", { withCredentials: true });
+        const { data } = await axios.get("https://frproj1.onrender.com/api/admin/dashboard", { withCredentials: true });
         setStats(data);
       } catch (error) {
         console.error(error);

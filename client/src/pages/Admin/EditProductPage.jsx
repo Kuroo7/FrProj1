@@ -19,7 +19,7 @@ function EditProductPage() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/products/${id}`)
+    axios.get(`https://frproj1.onrender.com/api/products/${id}`)
       .then((res) => {
         const product = res.data;
         setFormData({
@@ -56,7 +56,7 @@ function EditProductPage() {
         stock: parseInt(formData.stock),
       };
 
-      await axios.put(`http://localhost:5000/api/products/${id}`, payload, {
+      await axios.put(`https://frproj1.onrender.com/api/products/${id}`, payload, {
         withCredentials: true,
       });
       navigate("/admin/products");

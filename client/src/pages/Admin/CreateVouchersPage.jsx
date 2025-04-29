@@ -32,7 +32,7 @@ function CreateVouchersPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/api/vouchers/create", formData, { withCredentials: true });
+      await axios.post("https://frproj1.onrender.com/api/vouchers/create", formData, { withCredentials: true });
       navigate(`/admin/vouchers/${formData.partnerId}`);
     } catch (error) {
       console.error(error);
