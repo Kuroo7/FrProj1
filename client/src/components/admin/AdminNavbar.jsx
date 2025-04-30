@@ -7,6 +7,7 @@ const AdminNavbar = () => {
       <div className="space-x-4">
         <Link to="/admin/products">Products</Link>
         <Link to="/admin/vouchers">Vouchers</Link>
+        <Link to="/admin/vouchers/create">Create Vouchers</Link>
         <Link to="/admin/orders">Orders</Link>
       </div>
     </nav>
