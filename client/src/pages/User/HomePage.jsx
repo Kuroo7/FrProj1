@@ -4,6 +4,9 @@ import Navbar from '../../components/user/Navbar';
 import axios from 'axios';
 import ProductCard from '../../components/user/ProductCard';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/generic/Footer/Footer';
+import ServicesSection from '../../components/generic/OurServices/ServicesSection';
+import StatisticsSection from '../../components/generic/Statistic/StatisticsSection';
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
@@ -78,20 +81,20 @@ export default function HomePage() {
 
 
       <div className='max-w-6xl mx-auto'>
-  <h1 className='text-center text-6xl font-semibold my-5'>Best Seller</h1>
-  <div className='flex max-w-6xl mx-auto flex-wrap'>
-    {bestSellers.map(bestProducts => (
-      <ProductCard key={bestProducts._id} product={bestProducts} />
-    ))}
-  </div>
-  <div className='flex justify-center mt-5'>
-    <button className='bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors'
-     onClick={() => navigate('/products')}
-    >
-      Explore more
-    </button>
-  </div>
-</div>
+        <h1 className='text-center text-6xl font-semibold my-5'>Best Seller</h1>
+        <div className='flex max-w-6xl justify-between items-center mx-auto flex-wrap'>
+          {bestSellers.map(bestProducts => (
+            <ProductCard key={bestProducts._id} product={bestProducts} />
+          ))}
+        </div>
+        <div className='flex justify-center mt-5'>
+          <button className='bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition-colors'
+            onClick={() => navigate('/products')}
+          >
+            Explore more
+          </button>
+        </div>
+      </div>
 
       {/* Stats Section */}
       <div className="max-w-6xl mx-auto h-screen px-6 py-12">
@@ -126,104 +129,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* what we offer */}
-      <div className="relative  bg-green-600 h-[70vh] text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm uppercase tracking-widest mb-4">Our Service</p>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">what we offer</h1>
-        </div>
-      </div>
-
-      {/* Features Section */}
-      <div className="relative -mt-[20%] py-12 px-6">
-        <div className="max-w-6xl mx-auto flex justify-center gap-6">
-          <div className='w-1/3'>
-            <div
-              className=" h-64  bg-gray-200"
-              style={{
-                backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
-
-            {/* Card Content */}
-            <div className="p-4 bg-white rounded-b-lg">
-              <div className="flex justify-between  items-start">
-                <h3 className="text-2xl font-bold m-5 text-gray-800">title</h3>
-                <div className="w-10 h-10 bg-yellow-400 rounded flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586l6 6V15h-4v-3c0-1.1-.9-2-2-2h-2V4.414z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="m-5 text-gray-500 text-lg mt-2">description</p>
-            </div>
-          </div>
-          <div className='w-1/3'>
-            <div
-              className=" h-64  bg-gray-200"
-              style={{
-                backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
-
-            {/* Card Content */}
-            <div className="p-4 bg-white rounded-b-lg">
-              <div className="flex justify-between  items-start">
-                <h3 className="text-2xl font-bold m-5 text-gray-800">title</h3>
-                <div className="w-10 h-10 bg-yellow-400 rounded flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586l6 6V15h-4v-3c0-1.1-.9-2-2-2h-2V4.414z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="m-5 text-gray-500 text-lg mt-2">description</p>
-            </div>
-          </div>
-          <div className='w-1/3'>
-            <div
-              className=" h-64  bg-gray-200"
-              style={{
-                backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTc9APxkj0xClmrU3PpMZglHQkx446nQPG6lA&s)`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
-
-            {/* Card Content */}
-            <div className="p-4 bg-white rounded-b-lg">
-              <div className="flex justify-between  items-start">
-                <h3 className="text-2xl font-bold m-5 text-gray-800">title</h3>
-                <div className="w-10 h-10 bg-yellow-400 rounded flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M3 13h1v7c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a1 1 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586l6 6V15h-4v-3c0-1.1-.9-2-2-2h-2V4.414z" />
-                  </svg>
-                </div>
-              </div>
-              <p className="m-5 text-gray-500 text-lg mt-2">description</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <ServicesSection />
       <div className='h-screen '>
         <div className='flex pb-6 h-full justify-center items-center gap-20 flex-wrap'>
           <div className='w-1/4 capitalize font-semibold '>
@@ -235,7 +141,7 @@ export default function HomePage() {
             <h1 className='ml-8 text-2xl font-semibold' >Personilized <br></br> Assesment</h1>
             <p className='ml-8'>lorem32</p>
           </div>
-          
+
           <div className='w-1/4 h-[45%] bg-amber-200 flex flex-col  items-start '>
             <div className="w-20 h-20 mt-8 ml-8 mb-4 rounded-full bg-gray-200"></div>
             <h1 className='ml-8 text-2xl font-semibold' >Personilized <br></br> Assesment</h1>
@@ -260,7 +166,7 @@ export default function HomePage() {
 
       </div>
 
-
+      <StatisticsSection />
       {/* Video Banner Section */}
       <div className="relative bg-gray-800 text-white py-20 px-6 text-center">
         <div className="max-w-6xl mx-auto">
@@ -340,13 +246,7 @@ export default function HomePage() {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-yellow-400 text-gray-800 py-12 mt-16">
-        <div className="max-w-6xl mx-auto px-6 flex justify-center gap-8">
-          {['Wheat', 'Agro', 'The Farm', 'Natural Choices', 'Agric'].map((partner, index) => (
-            <div key={index} className="text-lg font-semibold">{partner}</div>
-          ))}
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
