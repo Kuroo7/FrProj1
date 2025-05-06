@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 import { useCart } from '../../context/CartContext';
+import { prodUri } from '../../constant';
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -12,7 +13,7 @@ export default function ProductDetails() {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`https://frproj1.onrender.com/api/products/${id}`);
+        const res = await fetch(`${prodUri}api/products/${id}`);
         const data = await res.json();
         setProduct(data);
       } catch (err) {

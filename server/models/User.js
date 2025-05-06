@@ -20,11 +20,15 @@ const userSchema = new mongoose.Schema({
     enum: ["user", "partner", "admin"],
     default: "user",
   },
+  phoneNumber: {
+    type: String,
+    unique: true,
+    sparse: true,
+  },
   partnerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
-    default: null, 
-    // if this user is created from a partner (optional, for future if needed)
+    default: null,
   },
 }, { timestamps: true });
 

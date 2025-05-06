@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
+import { prodUri } from "../../constant";
 
 function EditProductPage() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ function EditProductPage() {
   });
 
   useEffect(() => {
-    axios.get(`https://frproj1.onrender.com/api/products/${id}`)
+    axios.get(`${prodUri}api/products/${id}`)
       .then((res) => {
         const product = res.data;
         setFormData({
@@ -56,7 +57,7 @@ function EditProductPage() {
         stock: parseInt(formData.stock),
       };
 
-      await axios.put(`https://frproj1.onrender.com/api/products/${id}`, payload, {
+      await axios.put(`${prodUri}api/products/${id}`, payload, {
         withCredentials: true,
       });
       navigate("/admin/products");

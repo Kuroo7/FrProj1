@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { prodUri } from "../constant";
 
 const UserContext = createContext();
 
@@ -11,7 +12,7 @@ export const UserProvider = ({ children }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const { data } = await axios.get("https://frproj1.onrender.com/api/auth/profile", { withCredentials: true });
+        const { data } = await axios.get(`${prodUri}api/auth/profile`, { withCredentials: true });
         setUser(data);
       }catch(err){
         setUser(null);

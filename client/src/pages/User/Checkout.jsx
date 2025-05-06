@@ -4,6 +4,7 @@ import { useCart } from '../../context/CartContext';
 import Navbar from '../../components/user/Navbar';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { prodUri } from '../../constant';
 
 export default function Checkout() {
   const { cart, clearCart } = useCart();
@@ -32,7 +33,7 @@ export default function Checkout() {
       setError(null);
       
       const { data } = await axios.post(
-        'https://frproj1.onrender.com/api/vouchers/apply',
+        `${prodUri}/api/vouchers/apply`,
         {
           code: voucherCode,
           cartProductIds: cart.map(item => item._id),
@@ -84,7 +85,7 @@ export default function Checkout() {
       }));
 
       const { data } = await axios.post(
-        'https://frproj1.onrender.com/api/orders',
+        `${prodUri}api/orders`,
         {
           orderedProducts,
           voucherCode: appliedVoucher?.code || null,

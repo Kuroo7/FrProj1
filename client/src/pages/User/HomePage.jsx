@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Footer from '../../components/generic/Footer/Footer';
 import ServicesSection from '../../components/generic/OurServices/ServicesSection';
 import StatisticsSection from '../../components/generic/Statistic/StatisticsSection';
+import { prodUri } from '../../constant';
 
 export default function HomePage() {
   const [products, setProducts] = useState([]);
@@ -15,7 +16,7 @@ export default function HomePage() {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const res = await axios.get('https://frproj1.onrender.com/api/products');
+        const res = await axios.get(`${prodUri}api/products`);
         setProducts(res.data);
       } catch (err) {
         console.error('Failed to fetch products', err);

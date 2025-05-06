@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { prodUri } from "../../constant";
 
 const VoucherList = ({ partnerId, onBack }) => {
   const [vouchers, setVouchers] = useState([]);
@@ -8,7 +9,7 @@ const VoucherList = ({ partnerId, onBack }) => {
   useEffect(() => {
     const fetchVouchers = async () => {
       try {
-        const { data } = await axios.get(`https://frproj1.onrender.com/api/partner/partners/${partnerId}/vouchers`, { withCredentials: true }  );
+        const { data } = await axios.get(`${prodUri}api/partner/partners/${partnerId}/vouchers`, { withCredentials: true }  );
         setVouchers(data);
       } catch (error) {
         console.error(error);

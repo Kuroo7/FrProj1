@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { prodUri } from "../../constant";
 
 const UpdateUserModal = ({ user, onClose, refreshUsers }) => {
   const [name, setName] = useState(user.name);
@@ -11,7 +12,7 @@ const UpdateUserModal = ({ user, onClose, refreshUsers }) => {
 
     try {
       await axios.put(
-        `https://frproj1.onrender.com/api/admin/user/${user._id}`,
+        `${prodUri}api/admin/user/${user._id}`,
         { name, email, role },
         { withCredentials: true }
       );

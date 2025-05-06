@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { prodUri } from "../../constant";
 
 function CreateProductPage() {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ function CreateProductPage() {
         options: formData.options ? JSON.parse(formData.options) : [],
       };
 
-      await axios.post("https://frproj1.onrender.com/api/products", payload, {
+      await axios.post(`${prodUri}api/products`, payload, {
         withCredentials: true,
       });
       navigate("/admin/products");

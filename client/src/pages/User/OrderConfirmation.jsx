@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from '../../components/user/Navbar';
+import { prodUri } from '../../constant';
 
 export default function OrderConfirmation() {
   const  {id}  = useParams(); // Get the orderId from the URL
@@ -14,7 +15,7 @@ export default function OrderConfirmation() {
   useEffect(() => {
     const fetchOrder = async () => {
       try {
-        const { data } = await axios.get(`https://frproj1.onrender.com/api/orders/${id}`, {
+        const { data } = await axios.get(`${prodUri}api/orders/${id}`, {
           withCredentials: true,
         });
         setOrder(data);

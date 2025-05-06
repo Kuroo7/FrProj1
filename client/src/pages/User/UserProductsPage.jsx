@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductCard from '../../components/user/ProductCard';
+import { prodUri } from '../../constant';
 
 export default function UserProductsPage() {
   const [products, setProducts] = useState([]);
@@ -14,7 +15,7 @@ export default function UserProductsPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch('https://frproj1.onrender.com/api/products');
+        const res = await fetch(`${prodUri}api/products`);
         const data = await res.json();
         setProducts(data);
         
@@ -119,7 +120,7 @@ export default function UserProductsPage() {
           <p className="text-lg">No products found in this category.</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {filteredProducts.map(product => (
             <ProductCard key={product._id} product={product} />
           ))}

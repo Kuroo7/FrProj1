@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { prodUri } from "../../constant";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://frproj1.onrender.com/api/products")
+      .get(`${prodUri}api/products`)
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -15,7 +16,7 @@ function ProductsPage() {
   const deleteProduct = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await axios.delete(`https://frproj1.onrender.com/api/products/${id}`, {
+      await axios.delete(`${prodUri}api/products/${id}`, {
         withCredentials: true,
       });
       setProducts(products.filter((p) => p._id !== id));

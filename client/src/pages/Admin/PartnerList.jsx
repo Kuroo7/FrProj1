@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { prodUri } from "../../constant";
 
 const PartnerList = ({ onPartnerClick }) => {
   const [partners, setPartners] = useState([]);
@@ -8,7 +9,7 @@ const PartnerList = ({ onPartnerClick }) => {
   useEffect(() => {
     const fetchPartners = async () => {
       try {
-        const { data } = await axios.get("https://frproj1.onrender.com/api/admin/partners", { withCredentials: true });
+        const { data } = await axios.get(`${prodUri}api/admin/partners`, { withCredentials: true });
         setPartners(data);
       } catch (error) {
         console.error(error);

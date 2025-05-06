@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { prodUri } from "../../constant";
 
 function DashboardPage() {
   const [stats, setStats] = useState(null);
@@ -8,7 +9,7 @@ function DashboardPage() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const { data } = await axios.get("https://frproj1.onrender.com/api/admin/dashboard", { withCredentials: true });
+        const { data } = await axios.get(`${prodUri}api/admin/dashboard`, { withCredentials: true });
         setStats(data);
       } catch (error) {
         console.error(error);

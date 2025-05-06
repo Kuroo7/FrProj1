@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { prodUri } from "../../constant";
 
 function CreateVouchersPage() {
   const [formData, setFormData] = useState({
@@ -20,8 +21,8 @@ function CreateVouchersPage() {
     const fetchData = async () => {
       try {
         const [productsRes, partnersRes] = await Promise.all([
-          axios.get("https://frproj1.onrender.com/api/products"),
-          axios.get("https://frproj1.onrender.com/api/admin/users", { withCredentials: true })
+          axios.get(`${prodUri}api/products`),
+          axios.get(`${prodUri}api/admin/users`, { withCredentials: true })
         ]);
         // console.log(partnersRes.data);
         
@@ -92,7 +93,7 @@ function CreateVouchersPage() {
     e.preventDefault();
     try {
       await axios.post(
-        "https://frproj1.onrender.com/api/vouchers/create", 
+        `${prodUri}api/vouchers/create`, 
         formData, 
         { withCredentials: true }
       );
